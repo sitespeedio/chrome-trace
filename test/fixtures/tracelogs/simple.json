@@ -1,0 +1,83 @@
+{
+  "traceEvents": [
+    {
+      "name": "Asub",
+      "cat": "PERF",
+      "ph": "B",
+      "pid": 22630,
+      "tid": 22630,
+      "ts": 829
+    },
+    {
+      "name": "Asub",
+      "cat": "PERF",
+      "ph": "E",
+      "pid": 22630,
+      "tid": 22630,
+      "ts": 833
+    },
+    {
+      "name": "myFunction",
+      "cat": "foo",
+      "ph": "B",
+      "ts": 123,
+      "pid": 2343,
+      "tid": 2347,
+      "args": {
+        "first": 1
+      }
+    },
+    {
+      "ph": "E",
+      "ts": 145,
+      "pid": 2343,
+      "tid": 2347,
+      "args": {
+        "first": 4,
+        "second": 2
+      }
+    },
+    {
+      "name": "myFunction",
+      "cat": "foo",
+      "ph": "X",
+      "ts": 123,
+      "dur": 234,
+      "pid": 2343,
+      "tid": 2347,
+      "args": {
+        "first": 1
+      }
+    },
+    {
+      "name": "OutOfMemory",
+      "ph": "i",
+      "ts": 1234523.3,
+      "pid": 2343,
+      "tid": 2347,
+      "s": "g"
+    },
+    {
+      "args": {
+        "data": {
+          "frame": "0x3134ea1df8",
+          "isMainFrame": true,
+          "page": "0x3134ea1df8"
+        }
+      },
+      "cat": "devtools.timeline",
+      "name": "MarkLoad",
+      "ph": "I",
+      "pid": 2343,
+      "s": "t",
+      "tid": 2347,
+      "ts": 520922411161,
+      "tts": 966442
+    }
+  ],
+  "displayTimeUnit": "ns",
+  "systemTraceEvents": "SystemTraceData",
+  "otherData": {
+    "version": "My Application v1.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "categories": {
+    "Painting": 4.377,
+    "Loading": 3.7279999999999998,
+    "Layout": 97.646,
+    "Scripting": 5.488
+  },
+  "events": {
+    "Layout": 83.671,
+    "ParseHTML": 3.586,
+    "MinorGC": 4.269,
+    "CommitLoad": 0.141,
+    "UpdateLayerTree": 1.163,
+    "Paint": 3.214,
+    "BlinkGCMarking": 0.743,
+    "EventDispatch": 0.156,
+    "UpdateLayoutTree": 13.975,
+    "ResourceSendRequest": 0.001,
+    "ThreadState::performIdleLazySweep": 0.32
+  }
+}
