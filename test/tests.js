@@ -18,3 +18,7 @@ test('Can find main thread in www.sitespeed.io file', async t => {
   t.log(parsed);
   t.is(parsed.mainThread, '64513:775');
 });
+
+test.todo('Counts time for nested events');
+
+test.todo('Handles X events out of order');
