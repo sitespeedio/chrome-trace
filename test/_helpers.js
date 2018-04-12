@@ -6,8 +6,8 @@ import parser from '../';
 
 const TRACEFLOGSPATH = path.resolve(__dirname, 'fixtures', 'tracelogs');
 
-export async function parseTracelog(filename) {
+export async function parseTracelog(filename, options = {}) {
   return parser.parseStream(
-    fs.createReadStream(path.resolve(TRACEFLOGSPATH, filename))
+    fs.createReadStream(path.resolve(TRACEFLOGSPATH, filename), options)
   );
 }
