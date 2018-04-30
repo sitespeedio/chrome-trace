@@ -1,5 +1,9 @@
 # CHANGELOG - Chrome-trace
 
+## UNRELEASED
+### Fixed
+* Improve categorization of events to more closely match Chrome DevTools.
+
 ## 0.0.2
 ### Fixed
 * Capitalize event category names.
