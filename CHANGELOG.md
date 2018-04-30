@@ -1,6 +1,8 @@
 # CHANGELOG - Chrome-trace
 
 ## UNRELEASED
+### Added
+* Include time per category up until the 'firstPaint' mark in the output.
 ### Fixed
 * Improve categorization of events to more closely match Chrome DevTools.
 
