@@ -105,6 +105,24 @@ test('Can categorize events per category in www.google.ru file', async t => {
   );
 });
 
+test.failing('Can filter events before firstPaint', async t => {
+  const parsed = await parseTracelog('www.google.ru.json');
+  const categories = parsed['eventCategoryTime|firstPaint'][parsed.mainThread];
+  // Within 5% of what Chrome DevTools reports
+  t.true(
+    roughlyEquals(
+      categories,
+      {
+        Loading: 5.9,
+        Painting: 0.3,
+        Rendering: 1.8,
+        Scripting: 38.7
+      },
+      5
+    )
+  );
+});
+
 test.todo('Counts time for nested events');
 
 test.todo('Handles X events out of order');
