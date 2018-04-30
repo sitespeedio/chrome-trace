@@ -113,10 +113,10 @@ test.failing('Can filter events before firstPaint', async t => {
     roughlyEquals(
       categories,
       {
-        Loading: 5.9,
+        Loading: 9.2,
         Painting: 0.3,
-        Rendering: 1.8,
-        Scripting: 38.7
+        Rendering: 27.1,
+        Scripting: 40.8
       },
       5
     )
