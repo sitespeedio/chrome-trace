@@ -1,6 +1,6 @@
 {
   "name": "chrome-trace",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Chrome trace parser.",
   "main": "index.js",
   "bin": "./bin/chrome-trace.js",
