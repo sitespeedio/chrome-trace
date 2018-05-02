@@ -1,6 +1,6 @@
 # CHANGELOG - Chrome-trace
 
-## UNRELEASED
+## 0.1.0
 ### Fixed
 * Improve categorization of events to more closely match Chrome DevTools.
 
