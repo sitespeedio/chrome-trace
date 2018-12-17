@@ -15,22 +15,25 @@ test('Can categorize events per type in www.sitespeed.io file', async t => {
   const parsed = await parseTracelog('www.sitespeed.io.json');
   const events = parsed.eventTypeTime[parsed.mainThread];
   const expected = {
-    BlinkGCMarking: 0.7,
-    EventDispatch: 0.2,
-    FireAnimationFrame: 0.1,
-    FunctionCall: 0.5,
-    HitTest: 0.2,
-    Layout: 88.9,
-    MinorGC: 5.9,
-    Paint: 2.8,
-    ParseHTML: 4.6,
-    'ThreadState::performIdleLazySweep': 0.3,
-    UpdateLayerTree: 1.6,
-    UpdateLayoutTree: 17.8
+    BlinkGCMarking: 0.728,
+    EventDispatch: 0.197,
+    FireAnimationFrame: 0.109,
+    FunctionCall: 0.458,
+    HitTest: 0.182,
+    Layout: 88.916,
+    MinorGC: 5.935,
+    Paint: 2.831,
+    ParseHTML: 4.609,
+    ResourceChangePriority: 0.02,
+    'ThreadState::performIdleLazySweep': 0.308,
+    UpdateLayerTree: 1.625,
+    UpdateLayoutTree: 17.786
   };
-  // Within 5% of what Chrome DevTools reports
+
+  // Within 1% of what Chrome DevTools reports
   t.deepEqual(Object.keys(events).sort(), Object.keys(expected).sort());
-  t.true(roughlyEquals(events, expected, 5));
+
+  t.true(roughlyEquals(events, expected, 1));
 });
 
 // Not quite matching output from Chrome DevTools
@@ -38,33 +41,35 @@ test('Can categorize events per type in www.google.ru file', async t => {
   const parsed = await parseTracelog('www.google.ru.json');
   const events = parsed.eventTypeTime[parsed.mainThread];
   const expected = {
-    BlinkGCMarking: 9.6,
-    CompositeLayers: 22.7,
-    'Decode Image': 0.1,
-    EventDispatch: 10.1,
-    EvaluateScript: 436.3,
-    FireAnimationFrame: 0.1,
-    FunctionCall: 91.0,
-    Layout: 34.5,
-    MinorGC: 14.0,
-    MajorGC: 2.2,
-    Paint: 11.2,
-    ParseHTML: 20.3,
-    'ScriptWrappableVisitor::performLazyCleanup': 0.1,
-    TimerFire: 7.7,
-    'ThreadState::performIdleLazySweep': 3.6,
-    UpdateLayerTree: 10.0,
-    UpdateLayoutTree: 30.5,
+    BlinkGCMarking: 9.574,
+    CompositeLayers: 22.711,
+    'Decode Image': 0.062,
+    EventDispatch: 10.141,
+    EvaluateScript: 436.279,
+    FireAnimationFrame: 0.078,
+    FunctionCall: 91.007,
+    Layout: 34.426,
+    MinorGC: 13.985,
+    MajorGC: 2.236,
+    Paint: 11.153,
+    ParseHTML: 21.602,
+    ResourceChangePriority: 0.034,
+    'ScriptWrappableVisitor::performLazyCleanup': 0.072,
+    TimerFire: 7.74,
+    'ThreadState::performIdleLazySweep': 3.636,
+    UpdateLayerTree: 9.999,
+    UpdateLayoutTree: 30.542,
+    XHRLoad: 0.006,
     XHRReadyStateChange: 5.8,
-    'v8.compile': 38.1
+    'v8.compile': 38.074
   };
-  // Within 7% of what Chrome DevTools reports
+  // Within 1% of what Chrome DevTools reports
   t.deepEqual(Object.keys(events).sort(), Object.keys(expected).sort());
   t.true(
     roughlyEquals(
       events,
       expected,
-      7
+      1
     )
   );
 });
@@ -72,17 +77,17 @@ test('Can categorize events per type in www.google.ru file', async t => {
 test('Can categorize events per category in www.sitespeed.io file', async t => {
   const parsed = await parseTracelog('www.sitespeed.io.json');
   const categories = parsed.eventCategoryTime[parsed.mainThread];
-  // Within 5% of what Chrome DevTools reports
+  // Within 1% of what Chrome DevTools reports
   t.true(
     roughlyEquals(
       categories,
       {
-        Loading: 4.6,
-        Painting: 2.8,
-        Rendering: 108.5,
-        Scripting: 7.7
+        Loading: 4.629,
+        Painting: 2.831,
+        Rendering: 108.509,
+        Scripting: 7.735
       },
-      5
+      1
     )
   );
 });
@@ -90,17 +95,17 @@ test('Can categorize events per category in www.sitespeed.io file', async t => {
 test('Can categorize events per category in www.google.ru file', async t => {
   const parsed = await parseTracelog('www.google.ru.json');
   const categories = parsed.eventCategoryTime[parsed.mainThread];
-  // Within 5% of what Chrome DevTools reports
+  // Within 1% of what Chrome DevTools reports
   t.true(
     roughlyEquals(
       categories,
       {
-        Rendering: 75.0,
-        Loading: 21.6,
-        Painting: 33.9,
-        Scripting: 618.6
+        Rendering: 74.967,
+        Loading: 21.636,
+        Painting: 33.926,
+        Scripting: 618.628
       },
-      5
+      1
     )
   );
 });
