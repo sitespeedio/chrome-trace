@@ -1,5 +1,9 @@
 # CHANGELOG - Chrome-trace
 
+## 0.2.0
+### Added
+* Three decimals instead of one [#7](https://github.com/sitespeedio/chrome-trace/pull/7).
+
 ## 0.1.1
 ### Fixed
 * Added BlinkGC.AtomicPhase new in Chrome 70 [#5](https://github.com/sitespeedio/chrome-trace/pull/5).
