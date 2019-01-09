@@ -1,5 +1,9 @@
 # CHANGELOG - Chrome-trace
 
+## 0.2.1
+### Fixed
+* Catch if we can't find the first thread event. We now throws an exception (that's not optimal since we don't know what's wrong) with the info of what's wrong. We can change that later on.
+
 ## 0.2.0
 ### Added
 * Three decimals instead of one [#7](https://github.com/sitespeedio/chrome-trace/pull/7).
